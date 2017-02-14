@@ -1,0 +1,56 @@
+﻿<esri:Map
+	 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	 xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+	 xmlns:esriBing="clr-namespace:ESRI.ArcGIS.Client.Bing;assembly=ESRI.ArcGIS.Client.Bing"
+	 xmlns:esriMapping="http://schemas.esri.com/arcgis/mapping/2009"
+	 xmlns:esriExtensibility="http://schemas.esri.com/arcgis/client/extensibility/2010"
+	 xmlns:esriFSSymbols="clr-namespace:ESRI.ArcGIS.Client.FeatureService.Symbols;assembly=ESRI.ArcGIS.Client"
+	 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<esriMapping:ScaleBarExtensions.ScaleBarMapUnit>Meters</esriMapping:ScaleBarExtensions.ScaleBarMapUnit>
+	<esri:Map.IsLogoVisible>False</esri:Map.IsLogoVisible>
+	<esri:Map.Extent>
+		<esri:Envelope XMin="6455466.99293286" XMax="6515199.00706714" YMin="2684162.57420495" YMax="2711903.5">
+			<esri:Envelope.SpatialReference>
+				<esri:SpatialReference WKID="102100" />
+			</esri:Envelope.SpatialReference>
+		</esri:Envelope>
+	</esri:Map.Extent>
+	<esri:ArcGISTiledMapServiceLayer ID="Topographic" Url="http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer" MinimumResolution="0">
+		<esriExtensibility:Document.IsBaseMap>true</esriExtensibility:Document.IsBaseMap>
+		<esriMapping:LayerExtensions.LayerName>Imagery</esriMapping:LayerExtensions.LayerName>
+		<esriMapping:LayerExtensions.LayerInfos />
+		<esriExtensibility:LayerProperties.IsPopupEnabled>true</esriExtensibility:LayerProperties.IsPopupEnabled>
+		<esriExtensibility:LayerProperties.IsVisibleInMapContents>true</esriExtensibility:LayerProperties.IsVisibleInMapContents>
+	</esri:ArcGISTiledMapServiceLayer>
+	<esri:FeatureLayer ID="94d6d64053874d71ae085cc79c94da63" RendererTakesPrecedence="True" Url="http://services7.arcgis.com/QGrheSuanL2Pponl/arcgis/rest/services/helth/FeatureServer/0" Mode="OnDemand" OutFields="*">
+		<esriMapping:LayerExtensions.LayerName>helth</esriMapping:LayerExtensions.LayerName>
+		<esriMapping:LayerExtensions.DisplayUrl>http://services7.arcgis.com/QGrheSuanL2Pponl/arcgis/rest/services/helth/FeatureServer/0</esriMapping:LayerExtensions.DisplayUrl>
+		<esriMapping:LayerExtensions.LayerInfos />
+		<esriExtensibility:LayerProperties.IsPopupEnabled>true</esriExtensibility:LayerProperties.IsPopupEnabled>
+		<esriExtensibility:LayerProperties.IsVisibleInMapContents>true</esriExtensibility:LayerProperties.IsVisibleInMapContents>
+		<esriMapping:LayerExtensions.GeometryType>Point</esriMapping:LayerExtensions.GeometryType>
+		<esriMapping:LayerExtensions.GradientBrush>
+			<LinearGradientBrush>
+				<GradientStop Color="#FF090991" Offset="0" />
+				<GradientStop Color="#FFB6EDF0" Offset="1" />
+			</LinearGradientBrush>
+		</esriMapping:LayerExtensions.GradientBrush>
+		<esriMapping:LayerExtensions.Fields>
+			<esriMapping:FieldInfo Name="FID" DisplayName="FID" FieldType="Integer" AliasOnServer="FID" DomainSubtypeLookup="None" />
+			<esriMapping:FieldInfo Name="OBJECTID" DisplayName="OBJECTID" FieldType="Integer" AliasOnServer="OBJECTID" DomainSubtypeLookup="None" />
+			<esriMapping:FieldInfo Name="Helthcare" DisplayName="Helthcare" AliasOnServer="Helthcare" DomainSubtypeLookup="None" />
+			<esriMapping:FieldInfo Name="Pop" DisplayName="Pop" FieldType="Integer" AliasOnServer="Pop" DomainSubtypeLookup="None" />
+			<esriMapping:FieldInfo Name="GlobalID" DisplayName="GlobalID" AliasOnServer="GlobalID" DomainSubtypeLookup="None" />
+		</esriMapping:LayerExtensions.Fields>
+		<esriMapping:LayerExtensions.DisplayField>Helthcare</esriMapping:LayerExtensions.DisplayField>
+		<esriMapping:LayerExtensions.PopUpsOnClick>True</esriMapping:LayerExtensions.PopUpsOnClick>
+		<esri:GraphicsLayer.Renderer>
+			<esri:SimpleRenderer>
+				<esri:SimpleRenderer.Symbol>
+					<esriMapping:ImageFillSymbol Size="32.6666679382324" OriginX="0.5" OriginY="0.5" ImageData="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAK3RFWHRDcmVhdGlvbiBUaW1lAFdlZCAzIEF1ZyAyMDExIDEyOjQwOjUyIC0wODAwk/jABgAAAAd0SU1FB9sIBBIdGY+aKRgAAAAJcEhZcwAAHsEAAB7BAcNpVFMAAAAEZ0FNQQAAsY8L/GEFAAAEvklEQVR42u1aXUgjVxSe1IhUhfq3NGsi+hDblE011lQlxm0slArtk8g+i/rgg2Ae9UHqmy9CRQUpRLHoq6CwUH3wZ6uFRlSmrVBLo8QadLdIVylLbbFNvxMyadBJcmeSzNjd+8HNndw7595zzj3n3HNnRhA4ODg4ODg4ODg4FMPr9X6OKixTkmJ4ePgzNXQbGxsf0H1Op3PF4/G8QPnDbrfvi6L4WK0MxnQUcHFxUUR1OPwf79vb20JjYyMTfTzdysqK0NbWxkTn8/k+qq2tNdD10tLSA1RBzRXQ19c3MTk52XmzfW9vT8DKrCejnZ2drZJrT0UHiytKMN7fauVQDKz6G1ipr4Q4043H1NSUnGnLlngsLy8z08Hk/5HoFhcXI22kvPPz81Kl8rzGeiPmMgQCgbeampq+BbNstqohEB88DodD3NnZeT8rClhdXf0Yweeng4MDm97CJkIoFLK43e5tuERXRhUAX+8js4f56y1jSlxdXQmdnZ3TFKOur69z0lIADdDb2zsVHUxv2RSBFo3cFVZRCfdNKGfCXYCCHQLL462tLXeqyVpbW0XpOhgMlqGysDAZT4cAVojKykLX09NzVlhYSMEvF3S5qIvl7kM8cCIuBBEoP8TfdZaxY7BarT8LjFH5rhej0Rgmi5CT05BEBykzs/8hbsnLvAu8rGDOBKuqqkItLS1Mvp0Kc3NzCfsocFVXVzdlex5mjI2N9aMK4wCzHk4Tu7u7YRxefhCivok4E0QCI2Lv/k5qs1gsJ3RfukAusEnjDQwMjNAhKnqQugVmC8CALw4PD1Up8eTkRMSu8jpS2Lfx105tHR0dfozZWFBQUAnmKM//GoHqISUz9fX1AhQVqKurY9oVEiCye9lstgPsZk8S3cSigEf0MzQ09IlSDrq7u6VLR2xCo1EYHR190t/fH1uRnJwcYWJi4iEyzS3kHW5KZvb3960osbGmp6cVayDqAp+ifKlajXCBL4QbBxcWyB1uTCbTr8grvk9GR/1lZWW3aNW4BdHBygaTyafZLgA/x4Lu32tubn432X3UD1d5Cmv4UQu+VCmAHl4YDIZbpbhYNiETEIg2Njc37aWlbKdVs9lsgiW8g5z+G7l+euYgNz+1a6IApRgZGfEopcnLyyP3a842b698IsQVoMUk4+PjT+V8try8/Bn15+fny/r0wsJC1nlL66mwAvxFP8j8jisqKp7TNYIi5QaxBxbk8y6XK3I8Pjo6und8fGzWgjGtFBDB4OBgZVdXVyVdR3eMfKmvpKTkt7W1tUjCNDMzE59EZRV3KQbowstdUoAu4ArQmwG9wRWgNwN6gytAbwb0BleA3gzoDVWpMKWx8a+1JCDX/xMV2+chaYDeU8rNj3aH0rFUKaChoUGQ8nY9kMn5X3kX0FQBdMKTzvrRbw1+l/rOzs6KpL64k+Av2eZJk+Ow0+nMlfPZmpqaS1Rvtre3+09PT/Nu9ttstvt3QQH2dCdxuVz34bMJhZmfn5cNnJeXl5mQ8b10FRABmaaeoNdl2UBKqUKhkDkQCCh+RyeKosPr9Y7Rtd/vV82g9NGlz+frwTYbUEpP7wZNJtOzTCqNCdJnrZkqUGit5kJwcHBwcHBwcHC8xPgXAuYy+5abqM0AAAAASUVORK5CYII=" />
+				</esri:SimpleRenderer.Symbol>
+			</esri:SimpleRenderer>
+		</esri:GraphicsLayer.Renderer>
+	</esri:FeatureLayer>
+</esri:Map>
